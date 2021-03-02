@@ -1,0 +1,41 @@
+@import "./variables";
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: $font-normal * 1.4;
+}
+.btn:hover {
+  transform: translateY(-0.3rem);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(255, 255, 255, 0.1);
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  clear: both;
+}
